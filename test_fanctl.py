@@ -3,7 +3,14 @@
 import os
 import tempfile
 
-from fanctl import read, serve
+from fanctl import average_mhz, cpu_percent, cpu_times, read, serve
+
+# Parsers for the graphs: 100 of 400 new jiffies busy-free is 75% load; iowait counts as idle.
+assert cpu_times("cpu  10 0 10 70 10 0 0 0 0 0\ncpu0 1 1 1 1 1") == (100, 80)
+assert cpu_percent((100, 80), (500, 180)) == 75
+assert cpu_percent((100, 80), (100, 80)) == 0.0  # no time passed must not divide by zero
+assert average_mhz("cpu MHz\t\t: 1000.0\nother: 5\ncpu MHz\t\t: 3000.0\n") == 2000
+assert average_mhz("") == 0.0
 
 with tempfile.TemporaryDirectory() as d:
     enable = os.path.join(d, "enable")

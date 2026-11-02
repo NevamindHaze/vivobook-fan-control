@@ -1,6 +1,8 @@
 # VivoBook Fan Control
 
-A small window for the ASUS VivoBook X412DA on Linux Mint. It shows CPU temperature and fan RPM, and switches the fan between **Auto** and **Full** right away. The fan returns to Auto when the app closes.
+A small window for the ASUS VivoBook X412DA on Linux Mint. It switches the fan between **Auto** and **Full** right away, and the fan returns to Auto when the app closes.
+
+It also shows live graphs of the last 5 minutes of CPU temperature, fan speed, CPU load and CPU clock, updated every second, plus current GPU and SSD temperatures. Hover over a graph to read an earlier value. Graphs start empty each time the app opens, and they keep running if you cancel the password prompt.
 
 ## Install
 

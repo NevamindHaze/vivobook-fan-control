@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Fan Control
-Comment=Switch the laptop fan between Auto and Full
+Comment=Monitor temperature and switch the laptop fan between Auto and Full
 Exec=vivobook-fan-control
 Icon=vivobook-fan-control
 Terminal=false
