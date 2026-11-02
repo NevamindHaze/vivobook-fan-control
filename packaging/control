@@ -1,0 +1,11 @@
+Package: vivobook-fan-control
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: haze <85500705+NevamindHaze@users.noreply.github.com>
+Depends: python3, python3-gi, gir1.2-gtk-3.0, pkexec | policykit-1
+Homepage: https://github.com/NevamindHaze/vivobook-fan-control
+Description: Auto and Full fan switch for the ASUS VivoBook X412DA
+ A small window showing CPU temperature and fan RPM, with an immediate
+ switch between Auto and Full. The fan returns to Auto when the app closes.

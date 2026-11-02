@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Fan Control
+Comment=Switch the laptop fan between Auto and Full
+Exec=vivobook-fan-control
+Icon=vivobook-fan-control
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=fan;cooling;temperature;asus;
+StartupWMClass=vivobook-fan-control
