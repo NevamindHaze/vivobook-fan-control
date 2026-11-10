@@ -221,8 +221,12 @@ def gui():
     controls_on = [True]
 
     def tick():
-        add_temp(int(read(cpu_dir + "/temp1_input")) / 1000)
-        add_rpm(int(read(fan_dir + "/fan1_input")))
+        # A failed read must not raise here: GLib would stop calling tick and every graph would freeze.
+        for add, path, scale in ((add_temp, cpu_dir + "/temp1_input", 1000), (add_rpm, fan_dir + "/fan1_input", 1)):
+            try:
+                add(int(read(path)) / scale)
+            except (OSError, ValueError):
+                pass
         current = cpu_times(read("/proc/stat"))
         if current[0] > previous[0][0]:  # the first tick has no elapsed time to measure
             add_load(cpu_percent(previous[0], current))
